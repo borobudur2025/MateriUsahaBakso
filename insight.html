@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakso Business Insight - Strategi Sukses Bisnis Kuliner Bakso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D35400;
+            --secondary: #E67E22;
+            --accent: #F39C12;
+            --light: #FDEBD0;
+            --dark: #7E5109;
+            --darker: #5D4037;
+            --text: #2C3E50;
+            --success: #27AE60;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--gray);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23FDEBD0" opacity="0.1"/><path d="M0,0 Q50,20 100,0 T100,100 T0,100 T0,0 Z" fill="%23F39C12" opacity="0.05"/></svg>');
+            background-size: cover;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.8rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100" fill="rgba(255,255,255,0.1)" /></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .intro-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23FDEBD0" opacity="0.5"/></svg>');
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .intro-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        /* Insight Sections */
+        .insight-section {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .insight-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border-top: 5px solid var(--accent);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, var(--darker), var(--dark));
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--accent);
+        }
+
+        .card-content {
+            padding: 1.8rem;
+        }
+
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .card-content ul {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+
+        .card-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .card-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .key-point {
+            background: var(--light);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.2rem 0;
+        }
+
+        .stat-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .stat-item {
+            background: rgba(243, 156, 18, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            flex: 1;
+            min-width: 150px;
+            max-width: 300px;
+            text-align: center;
+            border: 1px solid rgba(243, 156, 18, 0.3);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Strategy Section */
+        .strategy-section {
+            background: linear-gradient(135deg, var(--dark), var(--darker));
+            color: white;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .strategy-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 0,100 100,100" fill="rgba(255,255,255,0.05)" /></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .strategy-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .strategy-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .strategy-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .strategy-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .strategy-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .strategy-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--dark), var(--darker));
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section {
+            padding: 0 15px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .stat-item {
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .intro-section {
+                padding: 1.8rem;
+            }
+
+            .card-header {
+                padding: 1.2rem;
+            }
+
+            .card-content {
+                padding: 1.5rem;
+            }
+
+            .strategy-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .strategy-section h2 {
+                font-size: 1.7rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                padding-bottom: 10px;
+            }
+
+            .section-title::after {
+                width: 80px;
+                height: 3px;
+            }
+
+            .intro-section {
+                padding: 1.5rem;
+            }
+
+            .insight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .strategy-section {
+                padding: 2rem 1rem;
+            }
+
+            .strategy-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .card-content li {
+                padding-left: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .header-content {
+                padding: 0 15px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .card-content {
+                padding: 1.2rem;
+            }
+
+            .card-content li {
+                font-size: 0.95rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .card-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h1>Bakso Business Insight</h1>
+            <p class="subtitle">Menguak Potensi dan Strategi Sukses Bisnis Kuliner Bakso di Palu</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro-section animated">
+            <h2>Potensi Bisnis Bakso di Indonesia</h2>
+            <p>Bisnis bakso di Indonesia, termasuk di Palu, adalah salah satu segmen kuliner yang paling stabil dan
+                diminati. Bakso bukan sekadar makanan, tapi sudah menjadi bagian dari budaya dan gaya hidup masyarakat.
+            </p>
+
+            <div class="stat-box">
+                <div class="stat-item">
+                    <div class="stat-value">95%</div>
+                    <div>Populasi Indonesia menyukai bakso</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3-5x</div>
+                    <div>Rata-rata konsumsi bakso per bulan</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">30-40%</div>
+                    <div>Margin keuntungan rata-rata</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section I: Analisis Pasar -->
+        <section class="insight-section animated">
+            <h2 class="section-title">I. Analisis Pasar dan Potensi Bisnis Bakso</h2>
+
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-users card-icon"></i>
+                        <h3>Ukuran Pasar yang Besar dan Stabil</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Basis Konsumen Luas:</strong> Bakso digemari oleh semua kalangan, dari anak-anak
+                                hingga orang dewasa</li>
+                            <li><strong>Konsumsi Rutin:</strong> Bakso bukan makanan musiman. Masyarakat cenderung
+                                mengonsumsinya secara rutin</li>
+                            <li><strong>Adaptasi Cita Rasa:</strong> Bakso mudah beradaptasi dengan lidah lokal
+                                masyarakat Palu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-coins card-icon"></i>
+                        <h3>Margin Keuntungan Menarik</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Dibandingkan beberapa jenis makanan lain, bisnis bakso memiliki margin keuntungan yang cukup
+                            sehat, terutama jika Anda mampu mengelola biaya bahan baku dan operasional dengan efisien.
+                        </p>
+                        <div class="key-point">
+                            <p>Harga jual bakso umumnya stabil dan diterima pasar dengan baik.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-lightbulb card-icon"></i>
+                        <h3>Model Bisnis Fleksibel</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Skalabilitas:</strong> Bisa dimulai dari skala kecil (gerobak) hingga besar
+                                (kedai modern)</li>
+                            <li><strong>Diversifikasi:</strong> Bakso bisa dijual matang siap santap atau bakso beku
+                                kemasan</li>
+                            <li><strong>Peluang Go-Digital:</strong> Sangat cocok dengan model delivery online melalui
+                                aplikasi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-truck card-icon"></i>
+                        <h3>Bahan Baku Relatif Mudah Didapat</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Di Palu, Anda bisa menemukan pemasok daging, sayuran, dan bumbu di pasar-pasar tradisional
+                            atau distributor.</p>
+                        <div class="key-point">
+                            <p>Kuncinya adalah menjalin hubungan baik untuk mendapatkan pasokan yang stabil dan
+                                berkualitas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section II: Tantangan -->
+        <section class="insight-section animated">
+            <h2 class="section-title">II. Tantangan dalam Bisnis Bakso</h2>
+
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-fist-raised card-icon"></i>
+                        <h3>Persaingan Ketat</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Pasar bakso sangat kompetitif. Anda akan bersaing dengan pedagang kaki lima, warung kecil,
+                            hingga brand besar.</p>
+                        <div class="key-point">
+                            <p>Diferensiasi produk dan layanan adalah kunci sukses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <h3>Fluktuasi Harga Bahan Baku</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Terutama harga daging sapi yang bisa naik turun. Ini memerlukan manajemen stok dan purchasing
+                            yang cermat.</p>
+                        <ul>
+                            <li>Membangun hubungan baik dengan pemasok</li>
+                            <li>Mengelola stok dengan efisien</li>
+                            <li>Memiliki alternatif sumber bahan baku</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-balance-scale card-icon"></i>
+                        <h3>Konsistensi Kualitas dan Rasa</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Pelanggan bakso sangat peka terhadap perubahan rasa. Menjaga kualitas dan konsistensi resep
+                            adalah tantangan berkelanjutan.</p>
+                        <div class="key-point">
+                            <p>Standarisasi resep dan pelatihan staf adalah solusi utama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-broom card-icon"></i>
+                        <h3>Manajemen Kebersihan dan Higienitas</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Sektor makanan sangat rentan terhadap isu kebersihan. Satu kasus keracunan makanan bisa
+                            merusak reputasi bisnis secara permanen.</p>
+                        <ul>
+                            <li>Implementasi SOP kebersihan ketat</li>
+                            <li>Pelatihan staf tentang higienitas makanan</li>
+                            <li>Audit kebersihan rutin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section III: Kunci Sukses -->
+        <section class="insight-section animated">
+            <h2 class="section-title">III. Kunci Sukses dalam Bisnis Bakso</h2>
+
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-star card-icon"></i>
+                        <h3>Rasa yang Konsisten dan Otentik</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Resep Andalan:</strong> Miliki resep bakso dan kuah yang unik serta kuat</li>
+                            <li><strong>Kualitas Bahan Baku Premium:</strong> Jangan kompromi pada kualitas daging dan
+                                bahan</li>
+                            <li><strong>Standarisasi Proses:</strong> Pastikan setiap porsi memiliki kualitas yang sama
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-shield-alt card-icon"></i>
+                        <h3>Kebersihan dan Higienitas</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Sertifikasi Halal (MUI):</strong> Membangun kepercayaan pelanggan</li>
+                            <li><strong>Standar Sanitasi Tinggi:</strong> Terapkan SOP ketat untuk kebersihan</li>
+                            <li><strong>Pelatihan Staf:</strong> Pastikan staf memahami pentingnya higienitas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-hands-helping card-icon"></i>
+                        <h3>Pelayanan Pelanggan yang Prima</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Keramahan:</strong> Senyum, sapa, dan layani dengan ramah</li>
+                            <li><strong>Responsif:</strong> Cepat tanggap terhadap pesanan dan keluhan</li>
+                            <li><strong>Pengalaman Positif:</strong> Ciptakan pengalaman makan yang menyenangkan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="card-header">
+                        <i class="fas fa-lightbulb card-icon"></i>
+                        <h3>Diferensiasi Produk dan Konsep</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Varian Bakso Unik:</strong> Bakso Beranak, Bakso Mercon, Bakso Keju</li>
+                            <li><strong>Menu Pelengkap:</strong> Pangsit, tahu, mie ayam, minuman spesial</li>
+                            <li><strong>Branding & Suasana:</strong> Ciptakan nama menarik dan suasana nyaman</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section IV: Peluang Inovasi -->
+        <section class="strategy-section animated">
+            <div class="strategy-content">
+                <h2>IV. Peluang Inovasi di Bisnis Bakso</h2>
+                <p>Di Palu, Anda bisa mencoba beberapa inovasi ini untuk menarik perhatian dan meningkatkan penjualan:
+                </p>
+
+                <div class="strategy-grid">
+                    <div class="strategy-item">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>Bakso Frozen/Vacuum Pack</h3>
+                        <p>Jual bakso mentah atau setengah jadi dalam kemasan beku untuk pelanggan yang ingin masak
+                            sendiri di rumah atau sebagai oleh-oleh.</p>
+                    </div>
+
+                    <div class="strategy-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Varian Kuah Kreatif</h3>
+                        <p>Tawarkan kuah lain seperti kuah taichan, kuah tomyam, atau kuah pedas level untuk variasi
+                            rasa.</p>
+                    </div>
+
+                    <div class="strategy-item">
+                        <i class="fas fa-box-open"></i>
+                        <h3>Paket Ekonomis/Keluarga</h3>
+                        <p>Tawarkan paket hemat untuk menarik kelompok pelanggan dengan harga spesial untuk keluarga.
+                        </p>
+                    </div>
+
+                    <div class="strategy-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Kolaborasi Lokal</h3>
+                        <p>Bermitra dengan bisnis UMKM lain di Palu (produsen kerupuk, minuman, atau dessert lokal).</p>
+                    </div>
+
+                    <div class="strategy-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Tema Unik Kedai</h3>
+                        <p>Ciptakan tema atau konsep unik di kedai bakso Anda yang membuat pelanggan ingin datang dan
+                            berfoto.</p>
+                    </div>
+
+                    <div class="strategy-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Digital Marketing Kreatif</h3>
+                        <p>Manfaatkan media sosial dengan konten menarik, promo digital, dan kemitraan dengan food
+                            vlogger lokal.</p>
+                    </div>
+                </div>
+
+                <div class="key-point" style="margin-top: 2rem; background: rgba(255,255,255,0.1);">
+                    <p>Membangun bisnis bakso memang terlihat sederhana, namun untuk sukses dan berkelanjutan,
+                        diperlukan strategi yang matang, konsistensi dalam kualitas, dan kemampuan beradaptasi dengan
+                        pasar.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Bakso Business Insight</h3>
+                    <p>Panduan strategi bisnis bakso ini dirancang untuk membantu pengusaha kuliner di Palu
+                        mengembangkan usaha bakso yang sukses dan berkelanjutan.</p>
+                </div>
+
+                <div class="footer-section contact-info">
+                    <h3>Kontak Konsultan Bisnis</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Lando, Kalukubula, Kec. Sigi Biromaru, Kota Palu,
+                        Sulawesi Tengah</p>
+                    <p><i class="fas fa-phone"></i> (0451) 999-8888</p>
+                    <p><i class="fas fa-envelope"></i> konsultasi@baksopalu.id</p>
+                    <p><i class="fas fa-globe"></i> www.baksopalu.id</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Layanan Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Konsultasi Bisnis Bakso</li>
+                        <li><i class="fas fa-check-circle"></i> Pelatihan Pengusaha Kuliner</li>
+                        <li><i class="fas fa-check-circle"></i> Pengembangan Menu Inovatif</li>
+                        <li><i class="fas fa-check-circle"></i> Strategi Pemasaran Digital</li>
+                        <li><i class="fas fa-check-circle"></i> Analisis Keuangan Usaha</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Bakso Business Insight. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animated');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>

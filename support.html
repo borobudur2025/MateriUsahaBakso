@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support System Requirements - Bisnis Kuliner Bakso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+        <link rel="shortcut icon" href="Image/bento_bg.png">
+    <style>
+        :root {
+            --primary: #D35400;
+            --secondary: #E67E22;
+            --accent: #F39C12;
+            --light: #FDEBD0;
+            --dark: #7E5109;
+            --darker: #5D4037;
+            --text: #2C3E50;
+            --success: #27AE60;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--gray);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.8rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100" fill="rgba(255,255,255,0.1)" /></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+        }
+
+        .intro-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23FDEBD0" opacity="0.5"/></svg>');
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .intro-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border-top: 5px solid var(--accent);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, var(--darker), var(--dark));
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--accent);
+        }
+
+        .card-content {
+            padding: 1.8rem;
+        }
+
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .card-content ul {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+
+        .card-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .card-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .key-point {
+            background: var(--light);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--dark), var(--darker));
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro-section {
+                padding: 1.8rem;
+            }
+
+            .card-header {
+                padding: 1.2rem;
+            }
+
+            .card-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h1>SUPPORT SYSTEM REQUIREMENTS</h1>
+                <p class="subtitle">Panduan Lengkap untuk Memulai Bisnis Kuliner Bakso Skala Kecil di Palu</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro-section animated">
+            <h2>Strategi Memulai Bisnis Bakso Skala Kecil</h2>
+            <p>Memulai bisnis bakso skala kecil adalah langkah yang sangat bijak! Ini meminimalkan risiko, memungkinkan
+                Anda untuk belajar dan beradaptasi, serta membangun reputasi sebelum ekspansi. Sebagai seorang konsultan
+                dengan pengalaman panjang, saya sangat menganjurkan pendekatan ini.</p>
+
+            <p>Meskipun skalanya kecil, prinsip-prinsip bisnis yang solid tetap harus diterapkan. Berikut adalah panduan
+                dan penyesuaian Support System Requirements untuk bisnis bakso skala kecil Anda di Palu:</p>
+
+            <div class="key-point">
+                <p><span class="highlight">Fokus pada kualitas rasa yang konsisten, kebersihan yang prima, dan pelayanan
+                        pelanggan yang ramah.</span> Tiga hal ini adalah kunci untuk menciptakan "efek dari mulut ke
+                    mulut" yang positif dan membuat bisnis bakso Anda dikenal dan dicintai di Palu.</p>
+            </div>
+        </section>
+
+        <h2 class="section-title">Komponen Utama Support System</h2>
+
+        <div class="requirements-grid">
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-users card-icon"></i>
+                    <h3>I. Kebutuhan Sumber Daya Manusia (SDM)</h3>
+                </div>
+                <div class="card-content">
+                    <p>Untuk skala kecil, Anda bisa memulai dengan tim inti yang ringkas dan multifungsi.</p>
+
+                    <h3>Pemilik/Manajer Merangkap Koki Utama</h3>
+                    <p>Anda sendiri akan menjadi motor utama bisnis. Bertanggung jawab atas kualitas resep, produksi
+                        bakso, pembelian bahan baku, hingga pelayanan pelanggan awal.</p>
+
+                    <h3>Asisten Dapur/Pelayan (1-2 orang)</h3>
+                    <ul>
+                        <li>Membantu persiapan bahan di dapur</li>
+                        <li>Membantu merebus dan menyajikan bakso</li>
+                        <li>Melayani pelanggan, mengambil pesanan</li>
+                        <li>Membersihkan area makan dan membantu di kasir</li>
+                    </ul>
+
+                    <div class="key-point">
+                        <p><strong>Pertimbangan:</strong> Fokus pada pelatihan intensif dan pembagian tugas yang jelas
+                            meskipun merangkap peran.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-building card-icon"></i>
+                    <h3>II. Sarana & Prasarana</h3>
+                </div>
+                <div class="card-content">
+                    <p>Fokus pada peralatan esensial dan lokasi yang strategis namun terjangkau.</p>
+
+                    <h3>Peralatan Dapur Esensial</h3>
+                    <ul>
+                        <li>Panci Rebus Bakso & Kuah (1-2 panci besar)</li>
+                        <li>Kompor (1-2 tungku)</li>
+                        <li>Kulkas & Freezer (kapasitas sesuai kebutuhan)</li>
+                        <li>Alat Giling Daging (atau gunakan jasa penggilingan)</li>
+                        <li>Peralatan Memasak Standar</li>
+                    </ul>
+
+                    <h3>Infrastruktur Fisik</h3>
+                    <ul>
+                        <li><strong>Lokasi:</strong> Warung tenda/gerobak di area strategis atau kios kecil</li>
+                        <li>Dapur sederhana dengan alur kerja efisien</li>
+                        <li>Penerangan dan ventilasi memadai</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-shopping-basket card-icon"></i>
+                    <h3>III. Bahan Baku & Pemasok</h3>
+                </div>
+                <div class="card-content">
+                    <p>Kualitas tetap nomor satu, tapi fokus pada efisiensi pembelian.</p>
+
+                    <h3>Strategi Pembelian</h3>
+                    <ul>
+                        <li>Pembelian harian/mingguan sesuai kapasitas</li>
+                        <li>Fokus pada kesegaran bahan baku</li>
+                        <li>Minimalisir stok berlebih</li>
+                    </ul>
+
+                    <h3>Sumber Pemasok</h3>
+                    <ul>
+                        <li>Pasar Tradisional Lokal di Palu (daging segar, sayuran)</li>
+                        <li>Toko Bahan Kue/Grosir (tepung, bihun, mie)</li>
+                    </ul>
+
+                    <div class="key-point">
+                        <p><strong>Kunci:</strong> Bangun hubungan baik dengan pedagang langganan untuk mendapatkan
+                            bahan terbaik.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-laptop-code card-icon"></i>
+                    <h3>IV. Sistem & Teknologi</h3>
+                </div>
+                <div class="card-content">
+                    <p>Sederhana namun efektif untuk operasional bisnis kecil.</p>
+
+                    <h3>Sistem Point of Sale</h3>
+                    <ul>
+                        <li>Manual: Buku catatan dan kalkulator</li>
+                        <li>Aplikasi di Smartphone (Kasir Pintar, Majoo Lite)</li>
+                        <li>Pembayaran QRIS (GoPay, OVO, DANA)</li>
+                    </ul>
+
+                    <h3>Manajemen Inventaris</h3>
+                    <ul>
+                        <li>Buku catatan atau spreadsheet sederhana</li>
+                        <li>Stock opname mingguan</li>
+                    </ul>
+
+                    <h3>Media Digital</h3>
+                    <ul>
+                        <li>Instagram & Facebook untuk promosi</li>
+                        <li>Google My Business (wajib!)</li>
+                        <li>Platform Pesan Antar (GoFood, GrabFood)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-bullhorn card-icon"></i>
+                    <h3>V. Pemasaran & Branding</h3>
+                </div>
+                <div class="card-content">
+                    <p>Meskipun kecil, branding tetap penting untuk dikenali.</p>
+
+                    <h3>Elemen Branding</h3>
+                    <ul>
+                        <li>Nama Bakso & Logo Sederhana</li>
+                        <li>Slogan menarik (contoh: "Bakso Juara Rasa Palu")</li>
+                    </ul>
+
+                    <h3>Strategi Pemasaran</h3>
+                    <ul>
+                        <li>Word-of-Mouth (dari mulut ke mulut)</li>
+                        <li>Promosi pembukaan (diskon, BOGO)</li>
+                        <li>Aktif di media sosial</li>
+                        <li>Spanduk/banner sederhana di lokasi</li>
+                        <li>Kerja sama komunitas lokal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-file-contract card-icon"></i>
+                    <h3>VI. Legalitas & Perizinan</h3>
+                </div>
+                <div class="card-content">
+                    <p>Meskipun kecil, tetap harus patuh pada aturan.</p>
+
+                    <h3>Dokumen Penting</h3>
+                    <ul>
+                        <li>NIB (Nomor Induk Berusaha)</li>
+                        <li>Izin Lingkungan (dari RT/RW)</li>
+                        <li>PIRT (untuk bakso kemasan beku)</li>
+                        <li>Sertifikasi Halal (MUI)</li>
+                    </ul>
+
+                    <h3>Aspek Perpajakan</h3>
+                    <ul>
+                        <li>NPWP pribadi untuk awal</li>
+                        <li>PPh Final UMKM jika omzet mencapai batas</li>
+                    </ul>
+
+                    <h3>SOP Sederhana</h3>
+                    <ul>
+                        <li>Resep & Kualitas Bakso</li>
+                        <li>Kebersihan (jadwal pembersihan)</li>
+                        <li>Standar Pelayanan Pelanggan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="requirement-card animated">
+                <div class="card-header">
+                    <i class="fas fa-shield-alt card-icon"></i>
+                    <h3>VII. Manajemen Risiko</h3>
+                </div>
+                <div class="card-content">
+                    <p>Siapkan diri untuk hal tak terduga dalam operasional bisnis.</p>
+
+                    <h3>Strategi Mitigasi</h3>
+                    <ul>
+                        <li>Sisihkan dana darurat untuk keadaan tak terduga</li>
+                        <li>Siapkan cadangan bahan baku utama untuk 1-2 hari</li>
+                    </ul>
+
+                    <div class="key-point">
+                        <p><strong>Prioritas Utama:</strong> Jangan pernah kompromi dengan kualitas dan kebersihan. Satu
+                            kasus keracunan makanan bisa menghancurkan reputasi bisnis kecil.</p>
+                    </div>
+
+                    <h3>Fokus Pengembangan</h3>
+                    <ul>
+                        <li>Uji pasar di Palu</li>
+                        <li>Sempurnakan resep dan proses</li>
+                        <li>Bangun basis pelanggan loyal secara bertahap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Section Above Footer -->
+    <section class="strategy-section animated">
+        <div class="container">
+            <div class="strategy-content">
+                <h2>Strategi Sukses Bisnis Bakso</h2>
+
+                <p>Memulai dari skala kecil adalah strategi yang cerdas. Ini memungkinkan Anda untuk menguji pasar di
+                    Palu,
+                    menyempurnakan resep dan proses, serta membangun basis pelanggan yang loyal secara bertahap.</p>
+
+                <p><span class="highlight">Fokus pada kualitas rasa yang konsisten, kebersihan yang prima, dan pelayanan
+                        pelanggan yang ramah.</span> Tiga hal ini adalah kunci untuk menciptakan "efek dari mulut ke
+                    mulut"
+                    yang positif dan membuat bisnis bakso Anda dikenal dan dicintai di Palu.</p>
+
+                <div class="strategy-points">
+                    <div class="key-strategy">
+                        <i class="fas fa-star"></i>
+                        <span>Kualitas Rasa Konsisten</span>
+                    </div>
+                    <div class="key-strategy">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <span>Kebersihan Prima</span>
+                    </div>
+                    <div class="key-strategy">
+                        <i class="fas fa-smile"></i>
+                        <span>Pelayanan Pelanggan Ramah</span>
+                    </div>
+                    <div class="key-strategy">
+                        <i class="fas fa-comments"></i>
+                        <span>Efek Mulut ke Mulut Positif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Panduan Ini</h3>
+                    <p>Panduan Support System Requirements ini dirancang khusus untuk membantu pengusaha bakso skala
+                        kecil di Palu memulai usaha dengan strategi yang tepat dan risiko minimal.</p>
+                </div>
+
+                <div class="footer-section contact-info">
+                    <h3>Konsultasi Bisnis</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Lando, Kalukubula, Kec. Sigi Biromaru, Kota Palu, Sulawesi Tengah</p>
+                    <p><i class="fas fa-phone"></i> (0451) 888-1234</p>
+                    <p><i class="fas fa-envelope"></i> konsultasi@baksopalu.id</p>
+                    <p><i class="fas fa-globe"></i> www.baksopalu.id</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Tips Sukses</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Fokus pada kualitas rasa</li>
+                        <li><i class="fas fa-check-circle"></i> Jaga kebersihan ekstra</li>
+                        <li><i class="fas fa-check-circle"></i> Pelayanan ramah dan cepat</li>
+                        <li><i class="fas fa-check-circle"></i> Manfaatkan media sosial</li>
+                        <li><i class="fas fa-check-circle"></i> Bangun hubungan dengan pelanggan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Support System Requirements Bisnis Kuliner Bakso. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animated');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>

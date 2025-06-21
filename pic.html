@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBM - PIC Bakso Bento Malang | Materi Bisnis Kuliner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap">
+    <link rel="shortcut icon" href="Image/bento_bg.png">
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --secondary: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #27ae60;
+            --text: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #f5f7fa, #e4e7ec);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: url('https://images.unsplash.com/photo-1612927601601-6638404737ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
+            min-height: 80vh;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            margin-bottom: 50px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(52, 73, 94, 0.9));
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 10;
+            padding: 60px 40px;
+            color: white;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+
+        .logo-icon {
+            background: white;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 5px solid white;
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .brand-subtitle {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            line-height: 1.8;
+        }
+
+        /* Section Styles */
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .card-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .card-content ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .card-content li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .card-content li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Tips Section */
+        .tip {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(to right, rgba(231, 76, 60, 0.05), rgba(243, 156, 18, 0.05));
+            border-radius: 15px;
+        }
+
+        .tip-number {
+            min-width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 20px;
+        }
+
+        .tip-content h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            border-radius: 20px 20px 0 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 3.2rem;
+            }
+
+            .brand-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .header-content {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <img src="Image/logo_bento.jpeg" alt="Logo" class="logo-img" />
+                </div>
+                <div class="logo-text"></div>
+            </div>
+            <h1 class="brand-name">Bakso Bento Malang</h1>
+            <p class="brand-subtitle">Inovasi Bakso Modern dengan Sentuhan Tradisional</p>
+            <p class="tagline">Panduan Lengkap Memulai dan Mengembangkan Bisnis Kuliner Bakso dengan Konsep Bento yang
+                Unik dan Menguntungkan</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Konsep Bisnis Section -->
+        <section class="section animate">
+            <h2 class="section-title">Konsep Bisnis Bakso Bento Malang</h2>
+            <div class="section-content">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="card-title">Ide Bisnis</h3>
+                    <div class="card-content">
+                        <p>BBM (Bakso Bento Malang) menggabungkan cita rasa bakso tradisional Malang dengan kemasan
+                            bento modern yang praktis dan menarik. Konsep ini memadukan:</p>
+                        <ul>
+                            <li>Kualitas rasa otentik bakso Malang</li>
+                            <li>Kemasan bento higienis dan estetik</li>
+                            <li>Varian menu inovatif</li>
+                            <li>Sistem penyajian cepat</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="card-title">Target Pasar</h3>
+                    <div class="card-content">
+                        <p>BBM menargetkan berbagai segmen konsumen:</p>
+                        <ul>
+                            <li>Pelajar dan mahasiswa</li>
+                            <li>Pekerja kantoran</li>
+                            <li>Keluarga muda</li>
+                            <li>Wisatawan di Malang</li>
+                            <li>Pecinta kuliner kekinian</li>
+                        </ul>
+                        <p>Dengan fokus pada daerah perkantoran, kampus, dan kawasan wisata di Malang.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Model Bisnis</h3>
+                    <div class="card-content">
+                        <p>BBM mengadopsi model bisnis hybrid:</p>
+                        <ul>
+                            <li>Outlet fisik dengan desain modern</li>
+                            <li>Layanan takeaway dan delivery</li>
+                            <li>Kerjasama dengan platform pesan-antar</li>
+                            <li>Konsep franchise untuk ekspansi</li>
+                            <li>Penjualan produk frozen untuk pasar ritel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produk Section -->
+        <section class="section animate">
+            <h2 class="section-title">Produk Unggulan</h2>
+            <div class="section-content">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="card-title">Varian Menu</h3>
+                    <div class="card-content">
+                        <p>BBM menawarkan berbagai varian bakso premium:</p>
+                        <ul>
+                            <li><strong>Bakso Bento Classic</strong> - Bakso sapi dengan kuah kaldu tradisional</li>
+                            <li><strong>Bakso Bento Spesial</strong> - Bakso campur (sapi+ayam+urat) dengan pangsit</li>
+                            <li><strong>Bakso Bento Pedas</strong> - Bakso dengan kuah pedas khas Malang</li>
+                            <li><strong>Bakso Bento Sehat</strong> - Bakso ayam rendah lemak dengan sayuran</li>
+                            <li><strong>Bakso Bento Premium</strong> - Bakso wagyu dengan jamur truffle</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="card-title">Kemasan Bento</h3>
+                    <div class="card-content">
+                        <p>Kemasan eksklusif BBM memiliki fitur:</p>
+                        <ul>
+                            <li>Desain minimalis dengan branding kuat</li>
+                            <li>Kompartemen terpisah untuk bakso, kuah, dan pelengkap</li>
+                            <li>Material food grade yang aman dan ramah lingkungan</li>
+                            <li>Kemasan tahan bocor untuk delivery</li>
+                            <li>Penyekat panas untuk menjaga suhu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="card-title">Keunggulan Produk</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Daging sapi pilihan dengan kandungan daging minimal 80%</li>
+                            <li>Bumbu racikan tradisional dengan rempah pilihan</li>
+                            <li>Proses pembuatan higienis dan terkontrol</li>
+                            <li>Tanpa bahan pengawet dan MSG tambahan</li>
+                            <li>Sertifikasi halal dan PIRT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section animate">
+            <h2 class="section-title">Portofolio Produk</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1678&q=80"
+                        alt="Bakso Bento Classic">
+                    <div class="gallery-caption">Bakso Bento Classic</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                        alt="Bakso Bento Spesial">
+                    <div class="gallery-caption">Bakso Bento Spesial</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+                        alt="Kemasan Bento">
+                    <div class="gallery-caption">Kemasan Bento Eksklusif</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                        alt="Proses Pembuatan">
+                    <div class="gallery-caption">Proses Pembuatan Higienis</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategi Section -->
+        <section class="section animate">
+            <h2 class="section-title">Strategi Pengembangan Bisnis</h2>
+            <div class="section-content">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="card-title">Operasional</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Lokasi strategis di pusat kota Malang</li>
+                            <li>Desain outlet modern dengan nuansa tradisional</li>
+                            <li>Sistem produksi terstandarisasi</li>
+                            <li>Manajemen rantai pasok yang efisien</li>
+                            <li>Pelatihan SDM profesional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="card-title">Analisis Keuangan</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Modal awal: Rp 150-250 juta</li>
+                            <li>HPP: 35-40% dari harga jual</li>
+                            <li>Harga jual per bento: Rp 25.000 - Rp 75.000</li>
+                            <li>Target penjualan: 100-150 bento/hari</li>
+                            <li>ROI: 18-24 bulan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="card-title">Pemasaran</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Branding kuat melalui media sosial</li>
+                            <li>Kolaborasi dengan food vlogger</li>
+                            <li>Program loyalitas pelanggan</li>
+                            <li>Event launching dan promo khusus</li>
+                            <li>Kerjasama dengan perusahaan untuk catering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="section animate">
+            <h2 class="section-title">Tips Sukses Bisnis Bakso Bento</h2>
+
+            <div class="tip">
+                <div class="tip-number">1</div>
+                <div class="tip-content">
+                    <h3>Konsistensi Rasa</h3>
+                    <p>Pastikan rasa bakso selalu konsisten dengan membuat SOP pembuatan yang ketat dan pelatihan
+                        karyawan yang memadai. Gunakan timbangan digital untuk mengukur bahan dan catat setiap resep
+                        dengan detail.</p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="tip-number">2</div>
+                <div class="tip-content">
+                    <h3>Bahan Baku Berkualitas</h3>
+                    <p>Gunakan daging sapi segar dengan kandungan lemak maksimal 15%. Bangun hubungan baik dengan
+                        supplier terpercaya untuk mendapatkan bahan baku terbaik dengan harga kompetitif.</p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="tip-number">3</div>
+                <div class="tip-content">
+                    <h3>Inovasi Menu Berkala</h3>
+                    <p>Perkenalkan varian baru setiap 3-4 bulan berdasarkan tren dan feedback pelanggan. Lakukan riset
+                        pasar kecil sebelum meluncurkan menu baru.</p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="tip-number">4</div>
+                <div class="tip-content">
+                    <h3>Pengalaman Pelanggan</h3>
+                    <p>Berikan pelayanan terbaik dan ciptakan pengalaman unik bagi pelanggan. Desain interior yang
+                        nyaman, musik yang sesuai, dan pelayanan ramah akan membuat pelanggan kembali.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>BBM - Bakso Bento Malang</h3>
+                <p>Inovasi bakso tradisional dalam kemasan bento modern untuk pengalaman kuliner yang unik dan
+                    memuaskan.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Lando, Kalukubula, Kec. Sigi Biromaru, Kota Palu, Sulawesi Tengah</p>
+                <p><i class="fas fa-phone"></i> (0341) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@baksobentomalang.com</p>
+                <p><i class="fas fa-clock"></i> Buka setiap hari: 10.00 - 22.00 WIB</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Franchise BBM</h3>
+                <p>Segera buka outlet BBM di kota Anda! Kami menawarkan paket franchise dengan modal terjangkau dan
+                    sistem terpadu.</p>
+                <p>Hubungi kami untuk informasi lebih lanjut tentang peluang bisnis ini.</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 BBM - Bakso Bento Malang. Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <script>
+        // Animasi saat halaman di-scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const animateElements = document.querySelectorAll('.animate');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>

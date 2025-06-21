@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Bisnis Kuliner Bakso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D35400;
+            --secondary: #E67E22;
+            --accent: #F39C12;
+            --light: #FDEBD0;
+            --dark: #7E5109;
+            --darker: #5D4037;
+            --text: #2C3E50;
+            --success: #27AE60;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--gray);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.8rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100" fill="rgba(255,255,255,0.1)" /></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+        }
+
+        .intro-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23FDEBD0" opacity="0.5"/></svg>');
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .intro-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .category-btn {
+            background: var(--white);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .category-btn i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .category-btn.active i,
+        .category-btn:hover i {
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .faq-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .faq-container {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .faq-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-header {
+            background: linear-gradient(to right, var(--light), var(--white));
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            border-left: 5px solid var(--accent);
+        }
+
+        .faq-header:hover {
+            background: linear-gradient(to right, var(--accent), var(--light));
+        }
+
+        .faq-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .faq-header h3 i {
+            margin-right: 12px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .faq-header .icon {
+            transition: var(--transition);
+            margin-left: 10px;
+        }
+
+        .faq-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-content.active {
+            padding: 1.5rem;
+            max-height: 1000px;
+        }
+
+        .faq-answer {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .faq-answer::before {
+            content: "\201C";
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .faq-answer p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-answer .highlight {
+            background: none;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--dark), var(--darker));
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .faq-header h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .intro-section {
+                padding: 1.8rem;
+            }
+
+            .faq-header {
+                padding: 1.2rem;
+            }
+
+            .faq-header h3 {
+                font-size: 1.1rem;
+            }
+
+            .faq-answer {
+                padding: 1.2rem;
+            }
+
+            .faq-answer::before {
+                left: 15px;
+                font-size: 4rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .faq-categories {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .category-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .faq-header h3 {
+                font-size: 1rem;
+            }
+
+            .faq-answer p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem 0;
+            }
+
+            .logo {
+                font-size: 2.2rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .faq-section h2 {
+                font-size: 1.4rem;
+                padding-bottom: 10px;
+            }
+
+            .faq-section h2::after {
+                width: 80px;
+                height: 3px;
+            }
+
+            .faq-header {
+                padding: 1rem;
+            }
+
+            .faq-header h3 i {
+                font-size: 1rem;
+                margin-right: 8px;
+            }
+
+            .faq-answer {
+                padding: 1rem;
+            }
+
+            .faq-answer::before {
+                top: -15px;
+                left: 10px;
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .faq-header h3 {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h1>FAQ Bisnis Kuliner Bakso</h1>
+                <p class="subtitle">Pertanyaan yang Sering Diajukan dan Jawaban untuk Pengusaha Bakso</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro-section animated">
+            <h2>Pentingnya FAQ untuk Bisnis Kuliner</h2>
+            <p>FAQ adalah alat penting untuk komunikasi yang efektif, baik secara internal (untuk tim Anda) maupun
+                eksternal (untuk pelanggan dan stakeholder lainnya). Dengan memiliki FAQ yang terstruktur, Anda tidak
+                hanya siap menjawab pertanyaan, tetapi juga secara proaktif mengkomunikasikan nilai dan keunggulan
+                bisnis bakso Anda.</p>
+
+            <div class="highlight">
+                <p>Ini adalah langkah kecil namun berdampak besar untuk membangun kepercayaan dan kredibilitas.</p>
+            </div>
+        </section>
+
+        <div class="faq-categories">
+            <button class="category-btn active" data-category="produk">
+                <i class="fas fa-utensils"></i> Produk Bakso
+            </button>
+            <button class="category-btn" data-category="operasional">
+                <i class="fas fa-store"></i> Lokasi & Operasional
+            </button>
+            <button class="category-btn" data-category="bisnis">
+                <i class="fas fa-chart-line"></i> Bisnis & Strategi
+            </button>
+        </div>
+
+        <!-- Section A: Pertanyaan Umum Seputar Bakso dan Produk -->
+        <section class="faq-section animated" id="produk-section">
+            <h2>A. Pertanyaan Umum Seputar Bakso dan Produk</h2>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Bakso Anda terbuat dari daging apa?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Bakso kami terbuat dari daging sapi pilihan
+                            100% (atau campuran sapi dan ayam jika ada), segar setiap hari, tanpa campuran bahan lain
+                            yang tidak perlu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah bakso Anda menggunakan pengawet/pengenyal?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Sama sekali tidak. Bakso kami bebas pengawet
+                            dan pengenyal, dibuat dengan resep tradisional yang mengandalkan kualitas daging dan teknik
+                            pengolahan yang tepat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah bakso Anda halal?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Ya, 100% halal. Kami menggunakan bahan baku
+                            bersertifikat halal dan proses produksi kami memenuhi standar syariat. Jika sudah memiliki
+                            sertifikasi MUI, tambahkan: "Kami sedang dalam proses mendapatkan/sudah memiliki sertifikasi
+                            halal MUI."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apa saja varian bakso yang tersedia?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami punya berbagai varian, mulai dari Bakso
+                            Urat, Bakso Halus, Bakso Telur, Bakso Beranak, hingga Bakso Rudal. Kami juga punya varian
+                            unik seperti Bakso Keju dan Bakso Mercon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Selain bakso, menu apa lagi yang tersedia?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Selain bakso andalan kami, kami juga
+                            menyediakan mie ayam, pangsit goreng/rebus, es teh, es jeruk, dan berbagai macam minuman
+                            segar lainnya.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah Anda menerima pesanan dalam jumlah besar?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Tentu saja! Kami siap melayani pesanan untuk
+                            acara spesial seperti arisan, ulang tahun, atau rapat. Silakan hubungi kami di
+                            0812-3456-7890 untuk informasi lebih lanjut dan penawaran khusus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Bagaimana cara menyimpan bakso yang saya beli?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Untuk menjaga kualitas, segera simpan bakso di
+                            freezer dengan wadah tertutup rapat. Bakso bisa bertahan hingga 2 minggu di dalam freezer.
+                            Saat akan dimasak, pindahkan ke kulkas bawah semalaman atau rendam dalam air dingin hingga
+                            lunak.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah ada pilihan pedas untuk bakso?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Ya, kami menyediakan sambal khusus dengan 3
+                            level kepedasan (sedang, pedas, ekstra pedas). Anda bisa menyesuaikannya sendiri sesuai
+                            selera. Kami juga punya pilihan Bakso Mercon bagi pecinta pedas sejati.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah Anda menyediakan opsi bebas MSG?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Bakso dan kuah kami dibuat tanpa tambahan MSG.
+                            Kami fokus pada rempah alami untuk memberikan cita rasa yang autentik dan sehat untuk
+                            pelanggan kami.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B: Pertanyaan Seputar Lokasi dan Operasional -->
+        <section class="faq-section animated" id="operasional-section" style="display: none;">
+            <h2>B. Pertanyaan Seputar Lokasi dan Operasional</h2>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Di mana lokasi Bakso Anda di Palu?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami berlokasi di Jl. Bakso Enak No. 45, Palu
+                            Selatan, dekat SMPN 1 Palu. Anda juga bisa mencari kami di Google Maps dengan keyword "Bakso
+                            Enak Palu".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Jam berapa Anda buka dan tutup?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami buka setiap hari (Selasa - Minggu) mulai
+                            pukul 10.00 WITA hingga 21.00 WITA. Hari Senin kami libur untuk pembersihan dan persiapan
+                            bahan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah ada tempat parkir?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Ya, kami menyediakan area parkir yang cukup
+                            untuk 15 sepeda motor dan 5 mobil di depan kedai kami. Area parkir kami aman dan dijaga
+                            petugas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah Anda menerima pembayaran non-tunai?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Tentu saja! Kami menerima pembayaran melalui
+                            QRIS (GoPay, OVO, Dana, LinkAja, dll.) dan juga tunai. Kami juga menerima pembayaran dengan
+                            kartu debit/credit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah Anda melayani pesan antar?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Ya! Anda bisa memesan bakso kami melalui
+                            GoFood, GrabFood, atau ShopeeFood. Cukup cari "Bakso Enak Palu" di aplikasi favorit Anda.
+                            Pesanan akan siap dalam 15-20 menit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section C: Pertanyaan Seputar Bisnis (Internal & Calon Mitra/Investor) -->
+        <section class="faq-section animated" id="bisnis-section" style="display: none;">
+            <h2>C. Pertanyaan Seputar Bisnis (Internal & Calon Mitra/Investor)</h2>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apa visi dan misi bisnis bakso Anda?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Visi: Menjadi kedai bakso favorit di Palu yang
+                            dikenal akan kualitas rasa, kebersihan, dan pelayanan prima. Misi: Menyajikan bakso lezat
+                            dan higienis dari bahan baku pilihan, serta memberikan pengalaman kuliner yang menyenangkan
+                            bagi setiap pelanggan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apa keunggulan kompetitif Bakso Anda?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Keunggulan kami terletak pada resep keluarga
+                            turun-temurun, penggunaan 100% daging segar berkualitas tinggi, kuah kaldu yang kaya rasa
+                            tanpa MSG berlebih, dan komitmen kami terhadap kebersihan serta pelayanan yang ramah. Kami
+                            juga memiliki varian unik yang tidak akan Anda temukan di tempat lain.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Bagaimana Anda menjaga kualitas dan kebersihan produk?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami menerapkan SOP (Standar Operasional
+                            Prosedur) ketat untuk setiap tahapan, mulai dari pemilihan bahan baku, proses produksi,
+                            hingga penyajian. Kami juga rutin melakukan pembersihan area dapur dan makan setiap hari,
+                            serta melatih staf mengenai higienitas pangan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Bagaimana Anda mengatasi fluktuasi harga bahan baku?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami memiliki hubungan baik dengan beberapa
+                            pemasok terpercaya yang memberikan harga kompetitif. Selain itu, kami juga melakukan
+                            pemantauan stok yang cermat dan penyesuaian porsi/strategi promosi jika diperlukan, tanpa
+                            mengurangi kualitas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Rencana ekspansi apa yang Anda miliki untuk bisnis ini?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Saat ini, fokus kami adalah memperkuat pondasi
+                            bisnis dan loyalitas pelanggan di lokasi pertama ini. Setelah stabil, kami berencana untuk
+                            membuka cabang baru di area strategis lain di Palu atau bahkan mengembangkan sistem
+                            kemitraan/franchise di masa mendatang.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Bagaimana Anda merekrut dan melatih staf?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami mencari individu yang bersemangat di
+                            bidang kuliner dan memiliki komitmen tinggi terhadap pelayanan pelanggan. Setiap staf baru
+                            akan melalui pelatihan intensif mengenai resep, proses produksi, standar kebersihan, dan
+                            etika pelayanan kami selama 2 minggu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Bagaimana Anda mengelola umpan balik/keluhan pelanggan?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami sangat menghargai setiap umpan balik. Kami
+                            menyediakan kotak saran/form online dan selalu siap mendengarkan langsung. Setiap keluhan
+                            akan ditanggapi dengan cepat dan profesional untuk mencari solusi terbaik dan meningkatkan
+                            kualitas layanan kami.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apa tantangan terbesar yang Anda hadapi?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Tantangan terbesar adalah menjaga konsistensi
+                            kualitas di tengah peningkatan permintaan dan fluktuasi pasokan. Kami mengatasinya dengan
+                            standardisasi resep yang ketat, pelatihan staf berkelanjutan, dan membangun hubungan kuat
+                            dengan pemasok tepercaya.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3><i class="fas fa-question"></i> Apakah ada peluang investasi atau kemitraan?</h3>
+                    <i class="fas fa-chevron-down icon"></i>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-answer">
+                        <p><span class="highlight">Jawaban Ideal:</span> Kami selalu terbuka untuk peluang kolaborasi
+                            yang saling menguntungkan. Jika Anda tertarik, silakan hubungi kami di invest@baksopalu.com
+                            untuk menjadwalkan diskusi lebih lanjut dan melihat proposal kemitraan kami.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang FAQ Bakso</h3>
+                    <p>FAQ ini dirancang untuk membantu pengusaha bakso menjawab pertanyaan umum dari pelanggan dan
+                        mitra bisnis secara profesional.</p>
+                </div>
+
+                <div class="footer-section contact-info">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Lando, Kalukubula, Kec. Sigi Biromaru, Kota Palu,
+                        Sulawesi Tengah</p>
+                    <p><i class="fas fa-phone"></i> (0451) 777-8888</p>
+                    <p><i class="fas fa-envelope"></i> info@baksopalu.com</p>
+                    <p><i class="fas fa-globe"></i> www.baksopalu.com</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Manfaat FAQ</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Menghemat waktu tim</li>
+                        <li><i class="fas fa-check-circle"></i> Meningkatkan kredibilitas</li>
+                        <li><i class="fas fa-check-circle"></i> Membangun kepercayaan pelanggan</li>
+                        <li><i class="fas fa-check-circle"></i> Mengurangi pertanyaan berulang</li>
+                        <li><i class="fas fa-check-circle"></i> Memperkuat branding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 FAQ Bisnis Kuliner Bakso. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle FAQ function
+        function toggleFaq(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.icon');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Initialize first FAQ as open
+        document.addEventListener('DOMContentLoaded', function () {
+            // Open first FAQ in each section
+            document.querySelectorAll('.faq-container:first-child .faq-content').forEach(content => {
+                content.classList.add('active');
+                content.previousElementSibling.querySelector('.icon').style.transform = 'rotate(180deg)';
+            });
+
+            // Category switching
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const sections = {
+                'produk': document.getElementById('produk-section'),
+                'operasional': document.getElementById('operasional-section'),
+                'bisnis': document.getElementById('bisnis-section')
+            };
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const category = this.getAttribute('data-category');
+
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Hide all sections
+                    Object.values(sections).forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    // Show selected section
+                    if (sections[category]) {
+                        sections[category].style.display = 'block';
+                    }
+                });
+            });
+
+            // Responsive adjustments
+            function handleResize() {
+                // Adjust FAQ header layout on small screens
+                const faqHeaders = document.querySelectorAll('.faq-header');
+                if (window.innerWidth < 576) {
+                    faqHeaders.forEach(header => {
+                        header.style.flexDirection = 'column';
+                        header.style.alignItems = 'flex-start';
+                    });
+                } else {
+                    faqHeaders.forEach(header => {
+                        header.style.flexDirection = 'row';
+                        header.style.alignItems = 'center';
+                    });
+                }
+            }
+
+            // Initial call
+            handleResize();
+
+            // Listen for resize events
+            window.addEventListener('resize', handleResize);
+        });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animated');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>
